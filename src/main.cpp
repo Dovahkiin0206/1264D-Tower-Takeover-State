@@ -138,18 +138,17 @@ void auton(){
   Intake2.spin(directionType::rev, 100, velocityUnits::pct);
   task::sleep(300);                  
   driveStraight(1, 60);
-  lift(-.8, 10);                       //lower lift to grab 1st cube
+  lift(-.7, 50);                       //lower lift to grab 1st cube
   lift(2, 50);
   task::sleep(200);
   Intake1.stop(brakeType::hold);      //stop intake motors
   Intake2.stop(brakeType::hold);
 
-  driveStraight(1.2, 50);           //up to cube tower
+  driveStraight(1.2, 40);           //up to cube tower
   task::sleep(900);
   Intake1.spin(directionType::rev, 100, velocityUnits::pct);    //run intake
   Intake2.spin(directionType::rev, 100, velocityUnits::pct);
-  task::sleep(100);
-  lift(-1.8, 10);               //grab tower and lift
+  lift(-1.8, 15);               //grab tower and lift
   lift(1, 40);
   task::sleep(200);
   
@@ -158,18 +157,17 @@ void auton(){
 
   driveStraight(1.2, 40);   
   turn(.2, 0, 50);          //slightly angle
-  driveStraight(1, 30);    //forward into zone
+  driveStraight(1.5, 30);    //forward into zone
 
-  lift(-1.55, 30);    //lower lift
+  lift(-1.6, 30);    //lower lift
   task::sleep(400);
   Intake1.spin(directionType::fwd, 40, velocityUnits::pct);
   Intake2.spin(directionType::fwd, 40, velocityUnits::pct);  
-  lift(2, 40);      //raise lift   
+  lift(2, 35);      //raise lift   
+  Intake1.stop(brakeType::coast);
+  Intake2.stop(brakeType::coast);
 
   driveStraight(-3, 60);
-  Intake1.stop(brakeType::hold);
-  Intake2.stop(brakeType::hold);
-
  
 }
 
